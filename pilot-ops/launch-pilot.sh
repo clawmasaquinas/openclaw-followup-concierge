@@ -111,8 +111,13 @@ channels_md = f'''# CHANNELS.md
 ## Contact preference
 - {contact_channel}
 
+## Intake model
+- default recommendation: forwarded lead emails or shared lead inbox
+- current known primary channel: {primary_channel}
+
 ## Rule
 Start with one primary channel before adding another.
+Avoid broad inbox access by default.
 '''
 
 workflows_md = f'''# WORKFLOWS.md
@@ -227,6 +232,7 @@ kickoff_brief = f'''# Kickoff Brief — {client_display}
 - Role: TBD
 - Pilot dates: TBD
 - Primary communication channel during pilot: {primary_channel}
+- Preferred intake mode: forwarded lead emails or shared lead inbox
 
 ## Core problem
 The client reported this core issue: {problem}
@@ -334,6 +340,29 @@ intake_summary = f'''# Intake Snapshot — {client_display}
 
 write('README.md', readme)
 write('CLIENT.md', client_md)
+intake_mode_md = f'''# INTAKE-MODE.md
+
+## Recommended mode
+- Forwarded lead emails
+
+## Why this is the default
+- narrower scope than full inbox access
+- easier trust story
+- easier setup/offboarding
+- enough visibility for triage + drafts + reminders
+
+## Client-specific current channel
+- {primary_channel}
+
+## Other acceptable modes
+- shared lead inbox
+- CRM/form/webhook feed
+- read-only inbox assist if truly needed
+
+## Avoid by default
+- full inbox access unless the workflow genuinely requires it
+'''
+
 write('CHANNELS.md', channels_md)
 write('WORKFLOWS.md', workflows_md)
 write('SUCCESS.md', success_md)
@@ -344,6 +373,7 @@ write('FAQ.md', faq_md)
 write('LOG.md', log_md)
 write('KICKOFF-BRIEF.md', kickoff_brief)
 write('INTAKE-SNAPSHOT.md', intake_summary)
+write('INTAKE-MODE.md', intake_mode_md)
 
 print(client_dir)
 print(client_display)
