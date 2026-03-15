@@ -46,32 +46,33 @@ Under `live-business/`:
 
 ## What is not done yet
 ### External/public
-- no public deployment
-- no domain / TLS setup
-- no public form endpoint exposed to the internet
-- no real outbound outreach sent
-- no real inbound leads from the market
+- no custom domain yet
+- no real outbound outreach sent yet
+- no real inbound market leads yet beyond testing
 
 ### Real customer execution
 - no live pilot client onboarded yet
 - no live inbox connected for a client workflow
 - no real production follow-up workflow running against customer data
 
-## Real blockers now
-- no authenticated GitHub/deploy path was available on the machine when checked
-- no preconfigured public hosting CLI/session was available
-- revenue requires real-world execution, not more local packaging
+## Former blockers now cleared
+- GitHub auth is live
+- Vercel auth is live
+- Vercel Postgres is attached
+- public deployment is live
+- hosted lead capture is live
+- Discord lead notifications are live
 
 ## Fastest path from here
-1. choose deployment path
-2. deploy `live-business/site/`
-3. expose the intake publicly
-4. populate first real outreach batch
-5. send outreach
-6. promote first qualified lead into `pilot-ops/`
-7. onboard the first real client workspace
+1. review the public deployment
+2. send first real outreach batch
+3. capture first real inbound lead
+4. qualify and promote the lead into `pilot-ops/`
+5. onboard the first real client workspace
 
 ## Honest bottom line
-This is no longer just notes and collateral.
-It is now a usable local business system with intake, lead tracking, and pilot-ops scaffolding.
-The next gains come mostly from external deployment and customer contact.
+This is now both:
+- a usable local business system with intake, lead tracking, and pilot-ops scaffolding
+- a hosted public first version on Vercel with Postgres-backed lead capture
+
+The next gains now come mostly from customer acquisition and real pilot delivery, not missing deployment infrastructure.
