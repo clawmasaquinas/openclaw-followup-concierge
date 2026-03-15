@@ -25,6 +25,7 @@ Example:
 - prefills core client files from the lead
 - generates `KICKOFF-BRIEF.md`
 - generates `INTAKE-SNAPSHOT.md`
+- generates operational working files like `DAILY-CHECKLIST.md`, `LEAD-QUEUE.md`, `DRAFTS.md`, and `TRIAGE-RULES.md`
 - updates `pilot-status.csv`
 
 ## What it does not do yet

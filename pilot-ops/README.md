@@ -24,4 +24,5 @@ This is the operational layer for delivering the first real OpenClaw Follow-up C
    - `./list-hosted-leads.sh`
    - `./launch-pilot.sh <lead-id> <client-slug>`
 5. review and refine the generated client files with real examples
-6. run the pilot and score it at the end
+6. run the pilot using the generated operational files (`DAILY-CHECKLIST.md`, `LEAD-QUEUE.md`, `DRAFTS.md`, `TRIAGE-RULES.md`)
+7. score it at the end

@@ -222,6 +222,73 @@ log_md = f'''# LOG.md
 - Contact preference: {contact_channel}
 - Problem: {problem}
 - Desired win: {win}
+
+## Ongoing log
+Add date-stamped notes here during the pilot:
+- what was surfaced
+- what was useful
+- what was noisy
+- what changed in rules/tone/boundaries
+'''
+
+daily_checklist = '''# DAILY-CHECKLIST.md
+
+## Daily pilot loop
+- review new forwarded leads / intake items
+- mark urgent vs low-priority
+- draft suggested replies
+- flag stale follow-up opportunities
+- log false positives / misses
+- update tone/boundaries if something durable changed
+
+## Daily questions
+- What mattered most today?
+- What was misclassified?
+- What draft felt most usable?
+- What should be ignored next time?
+'''
+
+lead_queue = '''# LEAD-QUEUE.md
+
+Use this as the working queue for real pilot items.
+
+| Date | Lead / thread | Source | Priority | Status | Suggested next step | Notes |
+|------|---------------|--------|----------|--------|---------------------|-------|
+'''
+
+drafts_md = '''# DRAFTS.md
+
+Use this for suggested replies and follow-up drafts during the pilot.
+
+## Template
+### Lead / thread
+- source:
+- reason this matters:
+
+### Suggested reply
+
+### Notes
+- tone notes:
+- escalation notes:
+'''
+
+triage_rules = '''# TRIAGE-RULES.md
+
+## Default high-priority signals
+- explicit buyer intent
+- quote / estimate request
+- referral source mentioned
+- short timeline / urgency
+- VIP sender
+
+## Default lower-priority signals
+- receipts
+- newsletters
+- automated notifications
+- resolved threads
+
+## Rule
+Refine these using the client's real examples during the pilot.
 '''
 
 kickoff_brief = f'''# Kickoff Brief — {client_display}
@@ -374,6 +441,10 @@ write('LOG.md', log_md)
 write('KICKOFF-BRIEF.md', kickoff_brief)
 write('INTAKE-SNAPSHOT.md', intake_summary)
 write('INTAKE-MODE.md', intake_mode_md)
+write('DAILY-CHECKLIST.md', daily_checklist)
+write('LEAD-QUEUE.md', lead_queue)
+write('DRAFTS.md', drafts_md)
+write('TRIAGE-RULES.md', triage_rules)
 
 print(client_dir)
 print(client_display)
