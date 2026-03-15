@@ -61,14 +61,14 @@ module.exports = async (_req, res) => {
         const el = document.createElement('article');
         el.className = 'card';
         el.innerHTML = `
-          <h2>${lead.name}</h2>
-          <p><strong>Business:</strong> ${lead.business || '—'}</p>
-          <p><strong>Email:</strong> ${lead.email || '—'}</p>
-          <p><strong>Primary channel:</strong> ${lead.primary_channel || '—'}</p>
-          <p><strong>Problem:</strong> ${lead.problem || '—'}</p>
-          <p><strong>Win:</strong> ${lead.win || '—'}</p>
-          <p><strong>Submitted:</strong> ${lead.created_at || '—'}</p>
-          <p><strong>Discord notified:</strong> ${lead.discord_notified ? 'yes' : 'no'}</p>
+          <h2>\${lead.name}</h2>
+          <p><strong>Business:</strong> \${lead.business || '—'}</p>
+          <p><strong>Email:</strong> \${lead.email || '—'}</p>
+          <p><strong>Primary channel:</strong> \${lead.primary_channel || '—'}</p>
+          <p><strong>Problem:</strong> \${lead.problem || '—'}</p>
+          <p><strong>Win:</strong> \${lead.win || '—'}</p>
+          <p><strong>Submitted:</strong> \${lead.created_at || '—'}</p>
+          <p><strong>Discord notified:</strong> \${lead.discord_notified ? 'yes' : 'no'}</p>
         `;
         root.appendChild(el);
       }
