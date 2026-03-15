@@ -1,13 +1,16 @@
 {
   "name": "openclaw-followup-concierge",
   "private": true,
-  "version": "0.1.0",
-  "description": "Local-first landing, intake, and pilot-ops stack for OpenClaw Follow-up Concierge.",
+  "version": "0.2.0",
+  "description": "Landing, hosted intake, and pilot-ops stack for OpenClaw Follow-up Concierge.",
   "scripts": {
     "start": "node site/server.js",
     "dev": "node site/server.js",
     "status": "bash ./status.sh",
     "start:all": "bash ./start-all.sh"
+  },
+  "dependencies": {
+    "@vercel/postgres": "^0.10.0"
   },
   "engines": {
     "node": ">=18"

@@ -1,5 +1,9 @@
 data/leads.json
 data/leads.csv
+node_modules/
 logs/
+.local-secrets/
+.vercel/
 site/*.log
 site/.env
+.vercel
