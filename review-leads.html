@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenClaw Lead Review</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">OpenClaw Admin</div>
+      <h1>Lead review</h1>
+      <p class="lede">Protected admin view for pilot requests.</p>
+    </section>
+    <section class="section alt">
+      <form id="admin-form" class="intake-form">
+        <label>Admin token<input type="password" id="admin-token" required></label>
+        <button class="button primary" type="submit">Load leads</button>
+      </form>
+      <div id="lead-list" class="grid three"></div>
+    </section>
+  </main>
+  <script>
+    const form = document.getElementById('admin-form');
+    const root = document.getElementById('lead-list');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      root.innerHTML = '<article class="card"><p>Loading…</p></article>';
+      const token = document.getElementById('admin-token').value;
+      const res = await fetch('/api/leads', { headers: { 'x-admin-token': token } });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        root.innerHTML = `<article class="card"><p>${data.error || 'Failed to load leads.'}</p></article>`;
+        return;
+      }
+      const leads = data.leads || [];
+      if (!leads.length) {
+        root.innerHTML = '<article class="card"><p>No leads yet.</p></article>';
+        return;
+      }
+      root.innerHTML = '';
+      for (const lead of leads) {
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <h2>${lead.name}</h2>
+          <p><strong>Business:</strong> ${lead.business || '—'}</p>
+          <p><strong>Email:</strong> ${lead.email || '—'}</p>
+          <p><strong>Primary channel:</strong> ${lead.primary_channel || '—'}</p>
+          <p><strong>Problem:</strong> ${lead.problem || '—'}</p>
+          <p><strong>Win:</strong> ${lead.win || '—'}</p>
+          <p><strong>Submitted:</strong> ${lead.created_at || '—'}</p>
+          <p><strong>Discord notified:</strong> ${lead.discord_notified ? 'yes' : 'no'}</p>
+        `;
+        root.appendChild(el);
+      }
+    });
+  </script>
+</body>
+</html>
