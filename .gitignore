@@ -1,0 +1,5 @@
+data/leads.json
+data/leads.csv
+logs/
+site/*.log
+site/.env

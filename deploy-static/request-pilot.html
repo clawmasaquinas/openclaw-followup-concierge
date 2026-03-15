@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Pilot — OpenClaw Follow-up Concierge</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">OpenClaw Follow-up Concierge</div>
+      <h1>Request a pilot</h1>
+      <p class="lede">Tell us where follow-up is breaking. For this first live version, requests route by email so we can keep launch simple and move fast.</p>
+    </section>
+
+    <section class="section alt">
+      <form class="intake-form">
+        <label>Name<input type="text" name="name" placeholder="Your name"></label>
+        <label>Business<input type="text" name="business" placeholder="Business name"></label>
+        <label>Email<input type="email" name="email" placeholder="Email"></label>
+        <label>Website<input type="url" name="website" placeholder="https://"></label>
+        <label>Best contact channel<input type="text" name="contact_channel" placeholder="Email, phone, DM, etc."></label>
+        <label>Primary channel in scope
+          <select name="primary_channel">
+            <option>Email</option>
+            <option>DMs</option>
+            <option>Mixed</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Biggest follow-up problem right now<textarea name="problem" rows="5" placeholder="What’s breaking in follow-up right now?"></textarea></label>
+        <label>What would a win look like in 14 days?<textarea name="win" rows="4" placeholder="What should improve first?"></textarea></label>
+      </form>
+      <div class="card">
+        <h2>Routing note</h2>
+        <p>This public version is live, but direct submission routing is intentionally not wired yet.</p>
+        <p>The richer intake/admin workflow currently lives in the local operations stack and can be connected to a real public backend next.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

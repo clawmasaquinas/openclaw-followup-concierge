@@ -1,0 +1,4 @@
+client_slug,status,stage,primary_workflow,primary_channel,start_date,end_date,next_action,owner_notes
+example-lead,prospect,qualification,,, , ,fill intake and confirm scope,
+demo-client,internal-demo,template-created,,, , ,replace with real client details,
+sample-promoted,qualified,kickoff-prep,inbound lead triage,email,,,fill intake and kickoff brief,Sample Promoted Client

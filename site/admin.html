@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenClaw Lead Admin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">OpenClaw Admin</div>
+      <h1>Captured leads</h1>
+      <p class="lede">Local admin view for intake submissions.</p>
+      <div class="cta-row">
+        <a class="button primary" href="/api/leads">View JSON</a>
+        <a class="button secondary" href="/api/leads.csv">Download CSV</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div id="lead-list" class="grid three"></div>
+    </section>
+  </main>
+
+  <script>
+    async function loadLeads() {
+      const res = await fetch('/api/leads');
+      const leads = await res.json();
+      const root = document.getElementById('lead-list');
+      root.innerHTML = '';
+      if (!leads.length) {
+        root.innerHTML = '<article class="card"><h2>No leads yet</h2><p>Submit the intake form to populate this view.</p></article>';
+        return;
+      }
+      for (const lead of leads.slice().reverse()) {
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <h2>${lead.name || 'Unnamed lead'}</h2>
+          <p><strong>Business:</strong> ${lead.business || '—'}</p>
+          <p><strong>Email:</strong> ${lead.email || '—'}</p>
+          <p><strong>Channel:</strong> ${lead.primary_channel || '—'}</p>
+          <p><strong>Problem:</strong> ${lead.problem || '—'}</p>
+          <p><strong>Win:</strong> ${lead.win || '—'}</p>
+          <p><strong>Submitted:</strong> ${lead.timestamp || '—'}</p>
+        `;
+        root.appendChild(el);
+      }
+    }
+    loadLeads();
+  </script>
+</body>
+</html>
