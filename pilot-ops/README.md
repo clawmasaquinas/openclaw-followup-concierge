@@ -10,15 +10,18 @@ This is the operational layer for delivering the first real OpenClaw Follow-up C
 ## Contents
 - `new-client.sh` — copies the base pilot template into a new client folder
 - `promote-lead.sh` — creates a client workspace and logs it in pilot status
+- `list-hosted-leads.sh` — shows leads captured by the hosted production app
+- `launch-pilot.sh` — turns a hosted lead into a prefilled pilot workspace
 - `clients/` — one folder per pilot client
 - `runbooks/` — delivery and operator runbooks
+- `PILOT_LAUNCHER.md` — launcher usage notes
 
 ## Recommended flow
 1. qualify the lead
 2. run discovery call
 3. send recap / pilot outline / proposal
-4. once they say yes, create or promote the client workspace:
-   - `./new-client.sh <client-slug>`
-   - or `./promote-lead.sh <client-slug> "Client Name"`
-5. fill in client specifics using the intake questionnaire and kickoff brief
+4. once they say yes, launch the client workspace from the hosted lead:
+   - `./list-hosted-leads.sh`
+   - `./launch-pilot.sh <lead-id> <client-slug>`
+5. review and refine the generated client files with real examples
 6. run the pilot and score it at the end
